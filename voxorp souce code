@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name=description content="Mine resources, build a base, upgrade your ship and destroy other players!">
+    <meta name=keywords content="Game,Multiplayer,online,Free,Battle,Voxorp">
+    <meta name=author content="Stan Flint">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/static/thumbnail.png" />
+    <link rel="icon" href="/static/icon.png">
+
+    <!-- AdinPlay Ads -->
+    <script>
+      var aiptag = aiptag || {};
+      aiptag.cmd = aiptag.cmd || [];
+      aiptag.cmd.display = aiptag.cmd.display || [];
+      aiptag.cmd.player = aiptag.cmd.player || [];
+      
+      //CMP tool settings
+      aiptag.cmp = {
+        show: true,
+        position: "centered",  //centered or bottom
+        button: true,
+        buttonText: "Privacy settings",
+        buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+      }
+    </script>
+    <script async src="//api.adinplay.com/libs/aiptag/pub/VXP/voxorp.com/tag.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166855831-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-166855831-1');
+    </script>
+
+    <title>Voxorp</title>
+  <script defer src="main.e506b4cd4b86217af7a6.js"></script><link href="main.d88a90c5c789f86b0e50.css" rel="stylesheet"></head>
+  <body>
+    <noscript>
+      <strong>Please enable JavaScript to play Voxorp</strong>
+    </noscript>
+    <div id="voxorp">
+      <div id="phaser">
+
+      </div>
+      <div id="loading">
+        <div class="title">BEEP BOOP</div>
+        <div class="subtitle">Loading...</div>
+      </div>
+      <div id="ui">
+        <div id="landing">
+          <div class="middle">
+            <div class="header">
+              <div class="title">
+                VOXORP
+              </div>
+              <div class="subtitle">
+                By Stan Flint
+              </div>
+            </div>
+
+            <form class="form" id="play-form">
+              <input type="text" id="input-player-name" class="input" placeholder="name" maxlength="16"><br>
+              <input type="submit" class="input" value="Play Now">
+            </form>
+            <div id="login-message" class="login-message">
+               
+            </div>
+
+            <div class="mobile-message">
+              Voxorp is currently not available on mobile.
+            </div>
+          </div>
+
+          <div class="landing-ad" id="voxorp-com_9720X250">
+        
+          </div>
+
+          <div class="footer">
+            <div class="social">
+              <a target="_blank" href="https://www.instagram.com/stan_gamedev/"><img class="social-button instagram" src="assets/instagram-badge.128880d6e4b89e820989.png"></a>
+              <a target="_blank" href="https://discord.gg/JexB4V7"><img class="discord social-button" src="assets/discord-badge.bdbddeafa4f24054982d.png"></a>
+              <a target="_blank" href="https://twitter.com/FlintStan"><img class="twitter social-button" src="assets/twitter-badge.2fb4678154fdc46615bf.png"></a>
+              <a target="_blank" href="https://kevin.games"><img class="kevin-games social-button" src="assets/kevin-badge.612beb4bf823e74608c4.png"></a>
+            </div>
+            <div class="links">
+              <select class="server-selector" id="server-selector">
+                <option>Connecting...</option>
+              </select> | 
+              <a href="#" id="open-info">Info</a>
+            </div>
+          </div>
+        </div>
+        
+        <div id="info" class="hide">
+          <div class="content">
+            <div class="grid">
+              <div class="nav">
+                <a href="#" id="close-info" class="close"><img src="assets/back-arrow.7e7ab6056f477d6e2a4c.png"></a>
+                <div class="links">
+                  <a href="#" id="info-changelog">Changelog</a><br>
+                  <a href="#" id="info-how-to-play">How to Play</a><br>
+                  <a href="#" id="info-other-io-games">Other IO Games</a><br>
+                  <a href="#" id="info-credits">Credits</a><br>
+                </div>
+              </div>
+              <div class="main">
+                <div class="container">
+                  <div id="info-main" class="inner">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="game">
+          <div id="inventory">
+            
+          </div>
+
+          <div id="map">
+            <canvas id="map-canvas" width="200" height="200">
+
+            </canvas>
+          </div>
+
+          <div class="top-left">
+            <div id="leaderboard">
+              
+            </div>
+            <img id="alliance-menu-open" src="assets/alliance-icon.5bcb2a80011d9e146182.png"/><br>
+            <div id="alliance-join-requests">
+
+            </div>
+          </div>
+
+          <div id="chat">
+            <input id="chat-input" type="text" placeholder="Say something nice..." autocomplete="off" maxlength="70">
+          </div>
+
+          <div id="alliance-menu">
+            <div class="inner">
+              <div class="header">
+                <span id="alliance-menu-title">Join an alliance</span><span class="close" id="alliance-menu-close">×</span>
+              </div>
+              <div id="alliance-menu-content" class="content">
+
+              </div>
+              <div id="alliance-create-section" class="create-alliance-section">
+                <div class="header">
+                  Create an alliance
+                </div>
+                <form id="create-alliance-form">
+                  <input class="input" type="text" id="create-alliance-name" placeholder="Alliance name" maxlength="7">
+                  <input class="input" type="submit" value="Create">
+                </form> 
+                <div id="create-alliance-response" class="response-message">
+                  
+                </div>
+              </div>
+              <div id="alliance-leave-section">
+                <input onclick="window.events.emit('alliance-leave')" class="input" type="submit" value="Leave Alliance">
+              </div>
+            </div>
+          </div>
+
+          <div id="toolbar">
+            <div>
+              <div id="toolbar-levels">
+
+              </div>
+              <div id="toolbar-tiles">
+                
+              </div>
+            </div>
+          </div>
+
+          <div id="info-box">
+            
+          </div>
+          
+          <div id="unlock-selector">
+
+          </div>
+
+          <div id="spaceport">
+            <div class="frame">
+              <div class="container unselectable">
+                <div class="header">
+                  <div class="title">
+                    Spaceport
+                  </div>
+                  <div id="spaceport-close" class="close">
+                    ✕
+                  </div>
+                </div>
+    
+                <div class="content">
+                  <div class="content-items" id="spaceport-content-items">
+                    
+                  </div>
+                  
+                  <div class="content-ships" id="spaceport-content-ships">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-message-container">
+            <div id="info-message">
+  
+            </div>
+          </div>
+        </div>
+
+
+        <div id="end-screen">
+          <div class="end-message" id="end-screen-message">
+
+          </div>
+          <div class="respawn">
+            <div class="respawn-button input" type="submit" onclick="window.events.emit('end-screen-respawn')">respawn</div> or
+            <div class="respawn-button input" type="submit" onclick="window.events.emit('end-screen-respawn-ad')"><img src="assets/video-icon.60230909c72299a59464.png">respawn +500xp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
